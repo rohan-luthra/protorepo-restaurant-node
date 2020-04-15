@@ -1,21 +1,25 @@
 {
-    "name": "@rohan-luthra/protorepo-items-node",
-    "version": "1.0.0",
-    "description": "items npm",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-      "url": "git://github.com/wtf-dot-menu/protorepo-items-node.git"
-    },
-    "keywords": [
-      "items"
-    ],
-    "author": "rohanluthra <rohanluthra.1123@gmail.com> (https://github/rohan-luthra)",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/wtf-dot-menu/protorepo-items-node/issues"
-    },
-    "homepage": "https://github.com/wtf-dot-menu/protorepo-items-node#readme"
+  "name": "@rohan-luthra/protorepo-restaurants-node",
+  "version": "1.0.0",
+  "description": "restaurants npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "git://github.com/rohan-luthra/protorepo-restaurants-node.git"
+  },
+  "keywords": [
+    "restaurants"
+  ],
+  "author": "rohanluthra <rohanluthra.1123@gmail.com> (https://github/rohan-luthra)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohan-luthra/protorepo-restaurants-node/issues"
+  },
+  "homepage": "https://github.com/rohan-luthra/protorepo-restaurants-node#readme",
+  "dependencies": {
+    "google-protobuf": "^3.11.4",
+    "grpc": "^1.24.2"
   }
+}
