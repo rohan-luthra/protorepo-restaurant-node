@@ -7,6 +7,17 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 var basic_pb = require('./basic_pb.js');
 var currency_pb = require('./currency_pb.js');
 
+function serialize_restaurant_AddRestaurantReq(arg) {
+  if (!(arg instanceof restaurant_pb.AddRestaurantReq)) {
+    throw new Error('Expected argument of type restaurant.AddRestaurantReq');
+  }
+  return new Buffer(arg.serializeBinary());
+}
+
+function deserialize_restaurant_AddRestaurantReq(buffer_arg) {
+  return restaurant_pb.AddRestaurantReq.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_restaurant_Empty(arg) {
   if (!(arg instanceof basic_pb.Empty)) {
     throw new Error('Expected argument of type restaurant.Empty');
@@ -45,22 +56,17 @@ function deserialize_restaurant_Restaurant(buffer_arg) {
 // Restaurant Service
 //
 var RestaurantServiceService = exports.RestaurantServiceService = {
-  // *
-  // Add new Restaurant
-  // @required: salesJwt
   addRestaurant: {
     path: '/restaurant.RestaurantService/AddRestaurant',
     requestStream: false,
     responseStream: false,
-    requestType: restaurant_pb.Restaurant,
+    requestType: restaurant_pb.AddRestaurantReq,
     responseType: basic_pb.Id,
-    requestSerialize: serialize_restaurant_Restaurant,
-    requestDeserialize: deserialize_restaurant_Restaurant,
+    requestSerialize: serialize_restaurant_AddRestaurantReq,
+    requestDeserialize: deserialize_restaurant_AddRestaurantReq,
     responseSerialize: serialize_restaurant_Id,
     responseDeserialize: deserialize_restaurant_Id,
   },
-  // *
-  // Get a Restaurant 
   getRestaurant: {
     path: '/restaurant.RestaurantService/GetRestaurant',
     requestStream: false,
@@ -72,8 +78,6 @@ var RestaurantServiceService = exports.RestaurantServiceService = {
     responseSerialize: serialize_restaurant_Restaurant,
     responseDeserialize: deserialize_restaurant_Restaurant,
   },
-  // *
-  // Get all Restaurant 
   getRestaurants: {
     path: '/restaurant.RestaurantService/GetRestaurants',
     requestStream: false,
@@ -85,9 +89,6 @@ var RestaurantServiceService = exports.RestaurantServiceService = {
     responseSerialize: serialize_restaurant_Restaurant,
     responseDeserialize: deserialize_restaurant_Restaurant,
   },
-  // *
-  // Update a Restaurant 
-  // @required: restJWT
   updateRestaurant: {
     path: '/restaurant.RestaurantService/UpdateRestaurant',
     requestStream: false,
@@ -99,9 +100,6 @@ var RestaurantServiceService = exports.RestaurantServiceService = {
     responseSerialize: serialize_restaurant_Id,
     responseDeserialize: deserialize_restaurant_Id,
   },
-  // *
-  // Delete a Restaurant 
-  // @required: salesJwt
   deleteRestaurant: {
     path: '/restaurant.RestaurantService/DeleteRestaurant',
     requestStream: false,

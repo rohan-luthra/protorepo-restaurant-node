@@ -1211,7 +1211,7 @@ proto.restaurant.Address.prototype.setTimezone = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.restaurant.Restaurant.repeatedFields_ = [13,14,15,16];
+proto.restaurant.Restaurant.repeatedFields_ = [7,13,14,15,16];
 
 
 
@@ -1249,7 +1249,8 @@ proto.restaurant.Restaurant.toObject = function(includeInstance, msg) {
     username: jspb.Message.getFieldWithDefault(msg, 3, ""),
     hashword: jspb.Message.getFieldWithDefault(msg, 4, ""),
     hashwordSalt: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    contact: (f = msg.getContact()) && proto.restaurant.Restaurant.Contact.toObject(includeInstance, f),
+    contactsList: jspb.Message.toObjectList(msg.getContactsList(),
+    proto.restaurant.Restaurant.Contact.toObject, includeInstance),
     personOfContact: jspb.Message.getFieldWithDefault(msg, 8, ""),
     logo: jspb.Message.getFieldWithDefault(msg, 9, ""),
     profileImage: jspb.Message.getFieldWithDefault(msg, 10, ""),
@@ -1328,7 +1329,7 @@ proto.restaurant.Restaurant.deserializeBinaryFromReader = function(msg, reader) 
     case 7:
       var value = new proto.restaurant.Restaurant.Contact;
       reader.readMessage(value,proto.restaurant.Restaurant.Contact.deserializeBinaryFromReader);
-      msg.setContact(value);
+      msg.addContacts(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -1468,9 +1469,9 @@ proto.restaurant.Restaurant.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getContact();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getContactsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       7,
       f,
       proto.restaurant.Restaurant.Contact.serializeBinaryToWriter
@@ -1903,39 +1904,40 @@ proto.restaurant.Restaurant.prototype.setHashwordSalt = function(value) {
 
 
 /**
- * optional Contact contact = 7;
- * @return {?proto.restaurant.Restaurant.Contact}
+ * repeated Contact contacts = 7;
+ * @return {!Array<!proto.restaurant.Restaurant.Contact>}
  */
-proto.restaurant.Restaurant.prototype.getContact = function() {
-  return /** @type{?proto.restaurant.Restaurant.Contact} */ (
-    jspb.Message.getWrapperField(this, proto.restaurant.Restaurant.Contact, 7));
+proto.restaurant.Restaurant.prototype.getContactsList = function() {
+  return /** @type{!Array<!proto.restaurant.Restaurant.Contact>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.restaurant.Restaurant.Contact, 7));
 };
 
 
 /**
- * @param {?proto.restaurant.Restaurant.Contact|undefined} value
+ * @param {!Array<!proto.restaurant.Restaurant.Contact>} value
  * @return {!proto.restaurant.Restaurant} returns this
 */
-proto.restaurant.Restaurant.prototype.setContact = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+proto.restaurant.Restaurant.prototype.setContactsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.restaurant.Restaurant.Contact=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.restaurant.Restaurant.Contact}
+ */
+proto.restaurant.Restaurant.prototype.addContacts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.restaurant.Restaurant.Contact, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.restaurant.Restaurant} returns this
  */
-proto.restaurant.Restaurant.prototype.clearContact = function() {
-  return this.setContact(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.restaurant.Restaurant.prototype.hasContact = function() {
-  return jspb.Message.getField(this, 7) != null;
+proto.restaurant.Restaurant.prototype.clearContactsList = function() {
+  return this.setContactsList([]);
 };
 
 

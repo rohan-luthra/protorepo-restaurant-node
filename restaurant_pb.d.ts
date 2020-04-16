@@ -170,10 +170,10 @@ export class Restaurant extends jspb.Message {
   getHashwordSalt(): number;
   setHashwordSalt(value: number): void;
 
-  hasContact(): boolean;
-  clearContact(): void;
-  getContact(): Restaurant.Contact | undefined;
-  setContact(value?: Restaurant.Contact): void;
+  clearContactsList(): void;
+  getContactsList(): Array<Restaurant.Contact>;
+  setContactsList(value: Array<Restaurant.Contact>): void;
+  addContacts(value?: Restaurant.Contact, index?: number): Restaurant.Contact;
 
   getPersonOfContact(): string;
   setPersonOfContact(value: string): void;
@@ -259,7 +259,7 @@ export namespace Restaurant {
     username: string,
     hashword: string,
     hashwordSalt: number,
-    contact?: Restaurant.Contact.AsObject,
+    contactsList: Array<Restaurant.Contact.AsObject>,
     personOfContact: string,
     logo: string,
     profileImage: string,
