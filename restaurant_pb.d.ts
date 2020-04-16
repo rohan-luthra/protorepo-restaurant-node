@@ -328,6 +328,29 @@ export class AddRestaurantReq extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): void;
 
+  getLogo(): string;
+  setLogo(value: string): void;
+
+  getProfileImage(): string;
+  setProfileImage(value: string): void;
+
+  getActive(): boolean;
+  setActive(value: boolean): void;
+
+  hasAddress(): boolean;
+  clearAddress(): void;
+  getAddress(): Address | undefined;
+  setAddress(value?: Address): void;
+
+  getSubscriptionPlan(): SubscriptionPlanMap[keyof SubscriptionPlanMap];
+  setSubscriptionPlan(value: SubscriptionPlanMap[keyof SubscriptionPlanMap]): void;
+
+  getSubscriptionPrice(): number;
+  setSubscriptionPrice(value: number): void;
+
+  getDefaultCurrenyId(): string;
+  setDefaultCurrenyId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddRestaurantReq.AsObject;
   static toObject(includeInstance: boolean, msg: AddRestaurantReq): AddRestaurantReq.AsObject;
@@ -343,6 +366,13 @@ export namespace AddRestaurantReq {
     name?: basic_pb.Name.AsObject,
     username: string,
     password: string,
+    logo: string,
+    profileImage: string,
+    active: boolean,
+    address?: Address.AsObject,
+    subscriptionPlan: SubscriptionPlanMap[keyof SubscriptionPlanMap],
+    subscriptionPrice: number,
+    defaultCurrenyId: string,
   }
 }
 
