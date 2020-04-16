@@ -41,7 +41,6 @@ function deserialize_restaurant_Id(buffer_arg) {
 
 
 var CurrencyServiceService = exports.CurrencyServiceService = {
-  // Adds a new Curreny
   addCurrency: {
     path: '/restaurant.CurrencyService/AddCurrency',
     requestStream: false,
@@ -53,7 +52,6 @@ var CurrencyServiceService = exports.CurrencyServiceService = {
     responseSerialize: serialize_restaurant_Id,
     responseDeserialize: deserialize_restaurant_Id,
   },
-  // Updates current Currency 
   updateCurrency: {
     path: '/restaurant.CurrencyService/UpdateCurrency',
     requestStream: false,
@@ -65,7 +63,6 @@ var CurrencyServiceService = exports.CurrencyServiceService = {
     responseSerialize: serialize_restaurant_Id,
     responseDeserialize: deserialize_restaurant_Id,
   },
-  // Remove Curreny if not used by any restaurant
   removeCurrency: {
     path: '/restaurant.CurrencyService/RemoveCurrency',
     requestStream: false,
@@ -77,7 +74,6 @@ var CurrencyServiceService = exports.CurrencyServiceService = {
     responseSerialize: serialize_restaurant_Id,
     responseDeserialize: deserialize_restaurant_Id,
   },
-  // Get All the Currecny
   getCurrencies: {
     path: '/restaurant.CurrencyService/GetCurrencies',
     requestStream: false,
