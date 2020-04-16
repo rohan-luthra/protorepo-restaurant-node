@@ -175,23 +175,43 @@
         
           
           <li>
-            <a href="#tax.proto">tax.proto</a>
+            <a href="#basic.proto">basic.proto</a>
             <ul>
               
                 <li>
-                  <a href="#restaurant.Tax"><span class="badge">M</span>Tax</a>
+                  <a href="#restaurant.CurrencyId"><span class="badge">M</span>CurrencyId</a>
                 </li>
-              
               
                 <li>
-                  <a href="#restaurant.OrderType"><span class="badge">E</span>OrderType</a>
+                  <a href="#restaurant.Description"><span class="badge">M</span>Description</a>
                 </li>
-              
-              
               
                 <li>
-                  <a href="#restaurant.TaxService"><span class="badge">S</span>TaxService</a>
+                  <a href="#restaurant.Empty"><span class="badge">M</span>Empty</a>
                 </li>
+              
+                <li>
+                  <a href="#restaurant.Id"><span class="badge">M</span>Id</a>
+                </li>
+              
+                <li>
+                  <a href="#restaurant.Name"><span class="badge">M</span>Name</a>
+                </li>
+              
+                <li>
+                  <a href="#restaurant.RestGroupId"><span class="badge">M</span>RestGroupId</a>
+                </li>
+              
+                <li>
+                  <a href="#restaurant.RestId"><span class="badge">M</span>RestId</a>
+                </li>
+              
+                <li>
+                  <a href="#restaurant.TaxId"><span class="badge">M</span>TaxId</a>
+                </li>
+              
+              
+              
               
             </ul>
           </li>
@@ -203,12 +223,74 @@
     
       
       <div class="file-heading">
-        <h2 id="tax.proto">tax.proto</h2><a href="#title">Top</a>
+        <h2 id="basic.proto">basic.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
       
-        <h3 id="restaurant.Tax">Tax</h3>
+        <h3 id="restaurant.CurrencyId">CurrencyId</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>currency_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="restaurant.Description">Description</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>en</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ja</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="restaurant.Empty">Empty</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="restaurant.Id">Id</h3>
         <p></p>
 
         
@@ -225,6 +307,78 @@
                   <td><p> </p></td>
                 </tr>
               
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="restaurant.Name">Name</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>en</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ja</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="restaurant.RestGroupId">RestGroupId</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rest_group_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="restaurant.RestId">RestId</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
                 <tr>
                   <td>rest_id</td>
                   <td><a href="#string">string</a></td>
@@ -232,51 +386,26 @@
                   <td><p> </p></td>
                 </tr>
               
-                <tr>
-                  <td>name</td>
-                  <td><a href="#restaurant.Name">Name</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="restaurant.TaxId">TaxId</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
               
                 <tr>
-                  <td>inclusive</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>is_percentage</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#float">float</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>order_types</td>
-                  <td><a href="#restaurant.OrderType">OrderType</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>created_at</td>
-                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>updated_at</td>
-                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td>tax_id</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -290,92 +419,10 @@
       
 
       
-        <h3 id="restaurant.OrderType">OrderType</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>DINEIN</td>
-                <td>0</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>TAKEAWAY</td>
-                <td>1</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>AGGREGATORS</td>
-                <td>2</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>QSR</td>
-                <td>3</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
 
       
 
       
-        <h3 id="restaurant.TaxService">TaxService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>AddTax</td>
-                <td><a href="#restaurant.Tax">Tax</a></td>
-                <td><a href="#restaurant.Id">Id</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UpdateTax</td>
-                <td><a href="#restaurant.Tax">Tax</a></td>
-                <td><a href="#restaurant.Tax">Tax</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>GetTax</td>
-                <td><a href="#restaurant.TaxId">TaxId</a></td>
-                <td><a href="#restaurant.Tax">Tax</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>GetRestTax</td>
-                <td><a href="#restaurant.RestId">RestId</a></td>
-                <td><a href="#restaurant.Tax">Tax</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>DeleteTax</td>
-                <td><a href="#restaurant.Id">Id</a></td>
-                <td><a href="#restaurant.TaxId">TaxId</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-
-        
     
 
     <h2 id="scalar-value-types">Scalar Value Types</h2>
