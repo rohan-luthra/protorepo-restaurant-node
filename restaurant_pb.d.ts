@@ -328,45 +328,6 @@ export class AddRestaurantReq extends jspb.Message {
   getPassword(): string;
   setPassword(value: string): void;
 
-  getContactNumber(): string;
-  setContactNumber(value: string): void;
-
-  getPersonOfContact(): string;
-  setPersonOfContact(value: string): void;
-
-  getLogo(): string;
-  setLogo(value: string): void;
-
-  getProfileImage(): string;
-  setProfileImage(value: string): void;
-
-  getActive(): boolean;
-  setActive(value: boolean): void;
-
-  hasAddress(): boolean;
-  clearAddress(): void;
-  getAddress(): Address | undefined;
-  setAddress(value?: Address): void;
-
-  clearPaymentModesList(): void;
-  getPaymentModesList(): Array<PaymentModeMap[keyof PaymentModeMap]>;
-  setPaymentModesList(value: Array<PaymentModeMap[keyof PaymentModeMap]>): void;
-  addPaymentModes(value: PaymentModeMap[keyof PaymentModeMap], index?: number): PaymentModeMap[keyof PaymentModeMap];
-
-  clearTimingsList(): void;
-  getTimingsList(): Array<Timings>;
-  setTimingsList(value: Array<Timings>): void;
-  addTimings(value?: Timings, index?: number): Timings;
-
-  getSubscriptionPlan(): SubscriptionPlanMap[keyof SubscriptionPlanMap];
-  setSubscriptionPlan(value: SubscriptionPlanMap[keyof SubscriptionPlanMap]): void;
-
-  getSubscriptionPrice(): number;
-  setSubscriptionPrice(value: number): void;
-
-  getDefaultCurrenyId(): string;
-  setDefaultCurrenyId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddRestaurantReq.AsObject;
   static toObject(includeInstance: boolean, msg: AddRestaurantReq): AddRestaurantReq.AsObject;
@@ -382,17 +343,6 @@ export namespace AddRestaurantReq {
     name?: basic_pb.Name.AsObject,
     username: string,
     password: string,
-    contactNumber: string,
-    personOfContact: string,
-    logo: string,
-    profileImage: string,
-    active: boolean,
-    address?: Address.AsObject,
-    paymentModesList: Array<PaymentModeMap[keyof PaymentModeMap]>,
-    timingsList: Array<Timings.AsObject>,
-    subscriptionPlan: SubscriptionPlanMap[keyof SubscriptionPlanMap],
-    subscriptionPrice: number,
-    defaultCurrenyId: string,
   }
 }
 
