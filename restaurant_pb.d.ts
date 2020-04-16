@@ -50,7 +50,7 @@ export namespace Payment {
   }
 }
 
-export class Slots extends jspb.Message {
+export class Slot extends jspb.Message {
   getStartTime(): string;
   setStartTime(value: string): void;
 
@@ -58,16 +58,16 @@ export class Slots extends jspb.Message {
   setEndTime(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Slots.AsObject;
-  static toObject(includeInstance: boolean, msg: Slots): Slots.AsObject;
+  toObject(includeInstance?: boolean): Slot.AsObject;
+  static toObject(includeInstance: boolean, msg: Slot): Slot.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Slots, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Slots;
-  static deserializeBinaryFromReader(message: Slots, reader: jspb.BinaryReader): Slots;
+  static serializeBinaryToWriter(message: Slot, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Slot;
+  static deserializeBinaryFromReader(message: Slot, reader: jspb.BinaryReader): Slot;
 }
 
-export namespace Slots {
+export namespace Slot {
   export type AsObject = {
     startTime: string,
     endTime: string,
@@ -79,9 +79,9 @@ export class Timings extends jspb.Message {
   setDay(value: DaysMap[keyof DaysMap]): void;
 
   clearSlotsList(): void;
-  getSlotsList(): Array<Slots>;
-  setSlotsList(value: Array<Slots>): void;
-  addSlots(value?: Slots, index?: number): Slots;
+  getSlotsList(): Array<Slot>;
+  setSlotsList(value: Array<Slot>): void;
+  addSlots(value?: Slot, index?: number): Slot;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Timings.AsObject;
@@ -96,7 +96,7 @@ export class Timings extends jspb.Message {
 export namespace Timings {
   export type AsObject = {
     day: DaysMap[keyof DaysMap],
-    slotsList: Array<Slots.AsObject>,
+    slotsList: Array<Slot.AsObject>,
   }
 }
 
@@ -110,11 +110,17 @@ export class Address extends jspb.Message {
   getCity(): string;
   setCity(value: string): void;
 
+  getCityId(): string;
+  setCityId(value: string): void;
+
   getState(): string;
   setState(value: string): void;
 
   getCountry(): string;
   setCountry(value: string): void;
+
+  getCountryId(): string;
+  setCountryId(value: string): void;
 
   getPincode(): number;
   setPincode(value: number): void;
@@ -143,8 +149,10 @@ export namespace Address {
     line1: string,
     line2: string,
     city: string,
+    cityId: string,
     state: string,
     country: string,
+    countryId: string,
     pincode: number,
     geoLatitude: number,
     geoLongitude: number,
@@ -202,10 +210,10 @@ export class Restaurant extends jspb.Message {
   setFcmTokensList(value: Array<string>): void;
   addFcmTokens(value: string, index?: number): string;
 
-  clearPaymentModeList(): void;
-  getPaymentModeList(): Array<PaymentModesMap[keyof PaymentModesMap]>;
-  setPaymentModeList(value: Array<PaymentModesMap[keyof PaymentModesMap]>): void;
-  addPaymentMode(value: PaymentModesMap[keyof PaymentModesMap], index?: number): PaymentModesMap[keyof PaymentModesMap];
+  clearPaymentModesList(): void;
+  getPaymentModesList(): Array<PaymentModeMap[keyof PaymentModeMap]>;
+  setPaymentModesList(value: Array<PaymentModeMap[keyof PaymentModeMap]>): void;
+  addPaymentModes(value: PaymentModeMap[keyof PaymentModeMap], index?: number): PaymentModeMap[keyof PaymentModeMap];
 
   clearTimingsList(): void;
   getTimingsList(): Array<Timings>;
@@ -267,7 +275,7 @@ export namespace Restaurant {
     address?: Address.AsObject,
     imagesList: Array<string>,
     fcmTokensList: Array<string>,
-    paymentModeList: Array<PaymentModesMap[keyof PaymentModesMap]>,
+    paymentModesList: Array<PaymentModeMap[keyof PaymentModeMap]>,
     timingsList: Array<Timings.AsObject>,
     subscriptionPlan: SubscriptionPlanMap[keyof SubscriptionPlanMap],
     subscriptionPrice: number,
@@ -340,10 +348,10 @@ export class AddRestaurantReq extends jspb.Message {
   getAddress(): Address | undefined;
   setAddress(value?: Address): void;
 
-  clearPaymentModeList(): void;
-  getPaymentModeList(): Array<PaymentModesMap[keyof PaymentModesMap]>;
-  setPaymentModeList(value: Array<PaymentModesMap[keyof PaymentModesMap]>): void;
-  addPaymentMode(value: PaymentModesMap[keyof PaymentModesMap], index?: number): PaymentModesMap[keyof PaymentModesMap];
+  clearPaymentModesList(): void;
+  getPaymentModesList(): Array<PaymentModeMap[keyof PaymentModeMap]>;
+  setPaymentModesList(value: Array<PaymentModeMap[keyof PaymentModeMap]>): void;
+  addPaymentModes(value: PaymentModeMap[keyof PaymentModeMap], index?: number): PaymentModeMap[keyof PaymentModeMap];
 
   clearTimingsList(): void;
   getTimingsList(): Array<Timings>;
@@ -380,7 +388,7 @@ export namespace AddRestaurantReq {
     profileImage: string,
     active: boolean,
     address?: Address.AsObject,
-    paymentModeList: Array<PaymentModesMap[keyof PaymentModesMap]>,
+    paymentModesList: Array<PaymentModeMap[keyof PaymentModeMap]>,
     timingsList: Array<Timings.AsObject>,
     subscriptionPlan: SubscriptionPlanMap[keyof SubscriptionPlanMap],
     subscriptionPrice: number,
@@ -397,14 +405,14 @@ export interface SubscriptionPlanMap {
 
 export const SubscriptionPlan: SubscriptionPlanMap;
 
-export interface PaymentModesMap {
+export interface PaymentModeMap {
   CASH: 0;
   CARD: 1;
   ONLINE: 2;
   WALLET: 3;
 }
 
-export const PaymentModes: PaymentModesMap;
+export const PaymentMode: PaymentModeMap;
 
 export interface DaysMap {
   MONDAY: 0;
